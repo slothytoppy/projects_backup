@@ -1,1 +1,1 @@
-this file is for the custom_scripts directory, it is where i will store my programs that my scripts will run
+this is for custom_programs that i should be able to run like bash scripts but in the lords language C
