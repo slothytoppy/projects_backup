@@ -8,9 +8,9 @@
 #include <sys/wait.h>
 
 #ifdef stdlib_h
-#undef exit
+#undef exit // i do this to not use stdlibs exit
 #endif
-#define exit(code) _exit(code);
+#define exit(code) _exit(code); // _exit() is from unistd.h
 #define print(x) printf("%s", x)
 
 char* fext(char* filename) {
