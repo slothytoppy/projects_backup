@@ -11,7 +11,6 @@
 #undef exit // i do this to not use stdlibs exit
 #endif
 #define exit(code) _exit(code); // _exit() is from unistd.h
-#define print(x) printf("%s", x)
 
 char* fext(char* filename) {
     char* dot = strrchr(filename, '.');
@@ -20,10 +19,6 @@ char* fext(char* filename) {
     memcpy(ext, filename, sz);
     // ext[filename-dot];
     return ext;
-}
-
-int config_open(void){
-
 }
 
 int exec(char* args[]){
