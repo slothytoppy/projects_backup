@@ -4,25 +4,28 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <string.h>
-
+#include <stdlib.h>
 #include <sys/wait.h>
 
 #ifdef stdlib_h
-#undef exit // i do this to not use stdlibs exit
+#undef exit
 #endif
-#define exit(code) _exit(code); // _exit() is from unistd.h
+#define exit(code) _exit(code);
+#define print(x) printf("%s", x)
 
 char* fext(char* filename) {
     char* dot = strrchr(filename, '.');
     int sz=strlen(filename)-strlen(dot);
     char* ext=malloc(sz);
     memcpy(ext, filename, sz);
-    // ext[filename-dot];
     return ext;
 }
 
+int config_open(void){
+
+}
+
 int exec(char* args[]){
-    // printf("args:%s\n", *args);
     pid_t id=fork();
     int child_status;
     if(id==0){
@@ -32,10 +35,7 @@ int exec(char* args[]){
         printf("forking failed");
     return -1;
     }
-    if(id>0){
     wait(&child_status);
-    // waitpid(-1, NULL, 0);
-    }
     return 0;
 }
 
