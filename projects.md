@@ -7,3 +7,6 @@ write an RPC in c
 write my own `file` in c
 write my own netrw for nvim
 write a c library full of conveniences like an easy way of interacting with the file system, interacting with the user, progress indicator, more to be decided
+writing a package manager in c 
+writing a build system in c
+writing a scripting language in c
