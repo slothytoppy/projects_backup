@@ -88,10 +88,17 @@ nv() {
     ls -a
     #return $RETd $@ 
 }
+# gmd=get merge dev
+gmd(){
+git checkout main
+git merge dev
+git push origin main
+}
 autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 alias programs="cd ~/custom_programs/ctools"
+alias gs="git status"
 alias zsh="nv ~/.zshrc"
 alias init="nv ~/.config/nvim/init.lua"
 alias fm="ranger"
@@ -122,3 +129,4 @@ export MANPAGER='nvim +Man!'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# eval "$(starship init zsh)"
